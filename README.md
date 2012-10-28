@@ -3,7 +3,7 @@ visu-datalift
 
 Ebauche du module de visualisation de Datalift
 
-Ce repertoire a pour but de refléchir sur le module "Visualisation " de Datalift (www.datalift.fr)
+Ce repertoire a pour but de refléchir sur le module "Visualisation " de Datalift (www.datalift.org)
 
 #1- La structure des repertoires
  /asset --->>>contient les librairies et feuilles de styles
