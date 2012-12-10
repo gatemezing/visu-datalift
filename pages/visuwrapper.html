@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>visualisation Wizard :: Faites parler vos données</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Outi de visualisation automatiquee des données ">
+    <meta name="author" content="Ghislain Atemezing">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/docs.css" rel="stylesheet">
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+  
+  <!--quelques scripts utiles-->
+  <script src="../assets/js/sparql.js"></script>
+  <script src="../assets/js/analyse.js"</script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+  <!--requête pour données  geo-->
+  <script >
+   
+  </script>
+    
+
+ 
+
+  </head>
+
+  <body >
+    
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Datalift Visu</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html"><i class="icon-white icon-home"></i> Espace Projet</a>
+              </li>
+              <li class="">
+                <a href="./visuwrapper.html"><i class="icon-white icon-upload"></i> Choix dataset</a>
+              </li>
+              <li class="">
+                <a href="./visuwrapper.html"><i class="icon-white icon-eye-open"></i> Analyse</a>
+              </li>
+              <li class="">
+                <a href="https://docs.google.com/document/d/17e_x7wOorVA39EmaoCLhJWG11sSTX8eFW2yZ6i-qivM/edit"><i class="icon-white icon-check"></i> Résultats</a>
+              </li>
+              <li class="">
+                <a href="./exemples.html"><i class="icon-white icon-picture"></i>Exemples</a>
+              </li>
+              <li class="">
+                <a href="./code.html"><i class="icon-white icon-play-circle"></i> Code</a>
+              </li>
+              <li class="">
+                <a href="http://labs.mondeca.com/sparqlEndpointsStatus/"><i class="icon-white icon-book"></i> SPARQL Endpoint</a>
+              </li>
+              <li class="">
+                <a href="http://www.datalift.org"><i class="icon-white icon-hand-right"></i> Datalift</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="container">-->
+    <div>
+
+    <script src="../assets/js/jquery-1.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+  
+         <!-- <link href='..assets/css/eclipse.css' rel='stylesheet' />
+          <link href='..assets/css/inlet/Color.Picker.Classic.css' rel='stylesheet' />
+          <link href='../assets/js/jquery-ui-slider.css' rel='stylesheet' /> -->
+    
+
+<div class='container'>
+
+  <div class='page-header'>
+    <h1>Wizard de visualisation  <small>Etape 1: Télécharger vos données pour analyse</small></h1>
+  </div>
+
+ <!-- form to upload the file -->
+  <div class="row">
+        <div class="span3">
+
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="inputFile">Télécharger fichier</label>
+            <div class="controls">
+            <input type="file" id="inputFile" placeholder="name of the File">
+            </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputUrl">URL jeu de données</label>
+        <div class="controls">
+          <input type="url" id="inputUrl" placeholder="http://dbpedia.org/sparql/">
+        </div>
+      </div>
+      
+        <div class="control-group">
+           <div class="controls">
+          <button type="submit" class="btn btn-primary " onclick="analyse()">Analyse&raquo;</button>
+           </div>
+        </div>
+      
+        </form> 
+    
+      </div>     <!--fin analysis-->
+
+      <
+
+      <!-- Result part should be constructed programmatically-->
+  <div class="row"> 
+        <div class="span5 offset4">
+        <h3>Résultat de l'analyse du jeu de données</h3>  
+       	  <div class="alert alert-success" id="geodata">
+		   Présence des données Géographiques
+		  </div>
+		  
+		  <div class="alert alert-error" id="time">
+		   Absence des données temporelles
+		  </div>
+		  
+		  <div class="alert alert-error" id="stats">
+		   Absence des données statistiques
+		  </div>
+		  
+		  <div class="alert alert-success" id="people">
+		   Présence des données relatives aux personnes
+		  </div>
+		  <div class="alert alert-success" id="people">
+		   Présence des données relatives aux évènements
+		  </div>
+		  
+   <!--       <table class="table">
+           <caption><h3>Résultat de l'analyse du jeu de données</h3></caption> -->
+           
+		   
+      
+
+        
+
+      </div>    
+           
+         
+          
+                        
+        
+
+
+</div><div class='container' style='margin-top: 50px;'>
+
+  <div class='subnav' id='codemirrorNav'>
+    <div class='subnav-inner container'>
+      
+
+      <a href='#' class='toTop pull-left' style='margin-top:8px;margin-left:4px;'><i class='icon-arrow-up'> </i></a>
+      <h3 class='pull-left' id='chartTitle' style='margin-top:4px;margin-left: 10px;'>Data Snapshot</h3>
+
+      <ul class='nav nav-tabs pull-right' id='codeTabs'>
+        <li class='active'><a href='#viewCode' data-toggle='tab'>Sample View</a></li>
+        <li><a href='#sparqlData' data-toggle='tab'>SPARQL Code</a></li>
+        <li><a href='#codeMarkup' data-toggle='tab'>Markup (HTML/CSS)</a></li>
+      </ul>
+      
+    </div>
+  </div>
+
+</div><div class='row-fluid' id='codemirrorWrap'>
+
+<div class='span6' id='previewWrap'>
+
+<iframe id='preview'>
+
+</iframe>
+
+</div>
+
+
+<div class='span6' id='codeWrap'>
+
+<div class='tab-content' id='codeTabsContent'>
+  <div class='tab-pane fade in active' id='viewCode'>
+    <textarea name='code' id='code'> </textarea>
+  </div>
+  <div class='tab-pane fade in active' id='sparqlData'>
+    <textarea name='codeData' id='codeData'> </textarea>
+  </div>
+  <div class='tab-pane fade in active' id='codeMarkup'>
+    <textarea name='codeMarkup' id='codeMarkup'> </textarea>
+  </div>
+</div>
+
+
+</div>
+
+
+ 
+ 
+
+ 
+
+<!--
+      <hr>
+
+      <footer>
+      <p>&copy; 2012 <a href="http://www.novus.com">Novus Partners</a></p>
+      </footer>
+-->
+
+    </div>
+
+
+  </body>
+</html>
